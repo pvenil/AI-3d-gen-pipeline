@@ -3,7 +3,17 @@ from typing import Callable, Optional, Tuple
 import numpy as np
 import torch
 import torch.nn as nn
-from torchmcubes import marching_cubes
+import mcubes as _mcubes
+import torch as _torch
+import numpy as _np
+
+def marching_cubes(vol, level):
+    vol_np = vol.cpu().numpy() if hasattr(vol, 'cpu') else _np.array(vol)
+    verts, faces = _mcubes.marching_cubes(vol_np, level)
+    return _torch.tensor(verts, dtype=_torch.float32), _torch.tensor(faces.astype(_np.int64), dtype=_torch.long)
+
+def sparse_marching_cubes(vol, level):
+    return marching_cubes(vol, level)
 
 
 class IsosurfaceHelper(nn.Module):
