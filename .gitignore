@@ -10,6 +10,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
+triposr_env/
 dist/
 downloads/
 eggs/

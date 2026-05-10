@@ -1,12 +1,24 @@
+# TripoSR - Windows Compatible Requirements
+# Tested on: GTX 1650 4GB, Python 3.11, CUDA 11.8
+# Install PyTorch separately first:
+# pip install torch==2.1.0+cu118 torchvision==0.16.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+
+numpy==1.26.4
 omegaconf==2.3.0
 Pillow==10.1.0
 einops==0.7.0
-git+https://github.com/tatsy/torchmcubes.git
-transformers==4.35.0
 trimesh==4.0.5
-rembg
-huggingface-hub
-imageio[ffmpeg]
-gradio
+imageio==2.33.0
+imageio-ffmpeg==0.4.9
+huggingface-hub==0.17.3
+transformers==4.35.0
+tokenizers==0.14.1
+safetensors==0.4.0
 xatlas==0.0.9
 moderngl==5.10.0
+scipy==1.11.4
+rembg
+PyMCubes
+tqdm
+requests
+gradio==4.44.1
